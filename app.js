@@ -1,12 +1,12 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const morgan = require('morgan')
+//const morgan = require('morgan')
 app.use(express.json())
 app.use(cors())
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
+//app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
 
-morgan.token('data', (req, res) => JSON.stringify(req.body))
+//morgan.token('data', (req, res) => JSON.stringify(req.body))
 
 const requestLogger = (request, response, next) => {
     console.log('Method:', request.method)
